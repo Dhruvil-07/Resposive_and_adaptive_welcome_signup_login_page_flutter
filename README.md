@@ -1,6 +1,20 @@
 # welcome_login_signup_page_flutter
 
-A new Flutter project.
+A new responsive and adaptive pixel perfect design project in flutter
+
+Reusable widget concept used in this designs
+
+RESPONSIVE AND ADAPTIVE DESIGN
+(The Design change according to the size of the device and its orientation )
+
+Themes are also managed with in this designs
+
+In this Design , the color and anothers properties of the widget changes based on  the dark and light theme.
+
+This designs runs successfully on every devices (like android phone , android tabs , iphone , ipad  , web etc...).
+
+
+
 
 ## Getting Started
 
