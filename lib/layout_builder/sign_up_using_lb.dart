@@ -139,7 +139,7 @@ class _signup_screen_lbState extends State<signup_screen_lb> {
                       TextButton(
                           onPressed: (){},
                           child: cario_text(
-                            containt: "Don't have an Account ?  Sign Up",
+                            containt: "Join With Social Account",
                             fontsize: 12.sp,
                             fontcolor: Colors.deepPurple.shade200,
                           )

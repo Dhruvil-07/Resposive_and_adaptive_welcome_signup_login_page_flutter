@@ -137,7 +137,9 @@ class _login_screen_lbState extends State<login_screen_lb> {
 
 
                        TextButton(
-                           onPressed: (){},
+                           onPressed: (){
+                             Navigator.pushNamed(context, "/signup");
+                           },
                            child: cario_text(
                              containt: "Don't have an Account ?  Sign Up",
                              fontsize: 12.sp,
@@ -271,7 +273,9 @@ class _login_screen_lbState extends State<login_screen_lb> {
 
 
                        TextButton(
-                           onPressed: (){},
+                           onPressed: (){
+                             Navigator.pushNamed(context, "/signup");
+                           },
                            child: cario_text(
                              containt: "Don't have an Account ?  Sign Up",
                              fontsize: 8.sp,
@@ -420,7 +424,9 @@ class _login_screen_lbState extends State<login_screen_lb> {
 
 
                                      TextButton(
-                                         onPressed: (){},
+                                         onPressed: (){
+                                           Navigator.pushNamed(context, "/signup");
+                                         },
                                          child: cario_text(
                                            containt: "Don't have an Account ?  Sign Up",
                                            fontsize: 5.sp,

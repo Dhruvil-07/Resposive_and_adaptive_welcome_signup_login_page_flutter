@@ -5,6 +5,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:welcome_login_signup_page_flutter/custom_transaction.dart';
+import 'package:welcome_login_signup_page_flutter/layout_builder/login_using_lb.dart';
+import 'package:welcome_login_signup_page_flutter/layout_builder/sign_up_using_lb.dart';
 import 'package:welcome_login_signup_page_flutter/widget_component/image.dart';
 import 'package:welcome_login_signup_page_flutter/widget_component/text.dart';
 
@@ -25,92 +28,99 @@ class _welcome_screen_lbState extends State<welcome_screen_lb> {
         if(constraints.maxWidth < 480)
         {
           SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
-          return Container(
-            height: double.infinity,
-            width: double.infinity,
-            child: Column(
-              children: [
+          return SafeArea(
+            child: Container(
+              height: double.infinity,
+              width: double.infinity,
+              child: Column(
+                children: [
 
-                SizedBox(height: 64.h,),
+                  SizedBox(height: 64.h,),
 
-                algerita_text(containt: "Welcome to EDU",
-                  fontsize: 25.sp,
-                ),
-
-
-                SizedBox(height: 40.h,),
-
-                Container(
-                  height: MediaQuery.of(context).size.height / 2,
-                  width: double.infinity,
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 40.w,
-                      vertical: 8.h,
-                    ),
-                    child: image(image_path: "assets/images/chat.svg"),
+                  algerita_text(containt: "Welcome to EDU",
+                    fontsize: 25.sp,
                   ),
-                ),
 
 
-                SizedBox(height: 40.spMax,) ,
+                  SizedBox(height: 40.h,),
 
-                //login button
-                Container(
-                  width: 200.w,
-                  child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(30.w)),
-                      ),
-                      elevation: 10.sp,
-                      backgroundColor: Colors.deepPurple.shade300,
-                    ),
-                    onPressed: (){},
+
+                  Container(
+                    height: MediaQuery.of(context).size.height / 2,
+                    width: double.infinity,
                     child: Padding(
                       padding: EdgeInsets.symmetric(
-                        horizontal: 10.w,
-                        vertical: 2.h,
+                        horizontal: 40.w,
+                        vertical: 8.h,
                       ),
-                      child: cario_text(
-                        containt: "Login",
-                        fontsize: 20.sp,
-                        fontcolor: Colors.white,
+                      child: image(image_path: "assets/images/chat.svg"),
+                    ),
+                  ),
+
+
+                  SizedBox(height: 40.spMax,) ,
+
+                  //login button
+                  Container(
+                    width: 200.w,
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(30.w)),
+                        ),
+                        elevation: 10.sp,
+                        backgroundColor: Colors.deepPurple.shade300,
+                      ),
+                      onPressed: (){
+                        Navigator.push(context, cust_transactinon(child: login_screen_lb()));
+                      },
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 10.w,
+                          vertical: 2.h,
+                        ),
+                        child: cario_text(
+                          containt: "Login",
+                          fontsize: 20.sp,
+                          fontcolor: Colors.white,
+                        ),
                       ),
                     ),
                   ),
-                ),
 
-                SizedBox(height: 24.h) ,
+                  SizedBox(height: 24.h) ,
 
-                Container(
-                  width: 200.w,
-                  child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(30.spMin)),
+                  Container(
+                    width: 200.w,
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(30.spMin)),
+                        ),
+                        elevation: 10.0,
+                        backgroundColor: Colors.deepPurple.shade50,
                       ),
-                      elevation: 10.0,
-                      backgroundColor: Colors.deepPurple.shade50,
-                    ),
-                    onPressed: (){},
-                    child: Padding(
-                      padding: EdgeInsets.symmetric(
-                        horizontal: 10.w,
-                        vertical: 2.h,
-                      ),
-                      child: cario_text(
-                        containt: "Sign Up",
-                        fontsize: 20.sp,
-                        fontcolor: Colors.deepPurple.shade400,
+                      onPressed: (){
+                        Navigator.push(context, cust_transactinon(child: signup_screen_lb()));
+                      },
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 10.w,
+                          vertical: 2.h,
+                        ),
+                        child: cario_text(
+                          containt: "Sign Up",
+                          fontsize: 20.sp,
+                          fontcolor: Colors.deepPurple.shade400,
+                        ),
                       ),
                     ),
                   ),
-                ),
 
 
 
-              ],
+                ],
+              ),
             ),
           );
         }
@@ -158,7 +168,9 @@ class _welcome_screen_lbState extends State<welcome_screen_lb> {
                           elevation: 10.sp,
                           backgroundColor: Colors.deepPurple.shade300,
                         ),
-                        onPressed: (){},
+                        onPressed: (){
+                          Navigator.push(context, cust_transactinon(child: login_screen_lb()));
+                        },
                         child: Padding(
                           padding: EdgeInsets.symmetric(
                             horizontal: 10.w,
@@ -185,7 +197,9 @@ class _welcome_screen_lbState extends State<welcome_screen_lb> {
                           elevation: 10.sp,
                           backgroundColor: Colors.deepPurple.shade50,
                         ),
-                        onPressed: (){},
+                        onPressed: (){
+                          Navigator.push(context, cust_transactinon(child: signup_screen_lb()));
+                        },
                         child: Padding(
                           padding: EdgeInsets.symmetric(
                             horizontal: 10.w,
@@ -257,7 +271,9 @@ class _welcome_screen_lbState extends State<welcome_screen_lb> {
                                         elevation: 10.sp,
                                         backgroundColor: Colors.deepPurple.shade300,
                                       ),
-                                      onPressed: (){},
+                                      onPressed: (){
+                                        Navigator.push(context, cust_transactinon(child: login_screen_lb()));
+                                      },
                                       child: Padding(
                                         padding: EdgeInsets.symmetric(
                                           horizontal: 10.w,
@@ -284,7 +300,9 @@ class _welcome_screen_lbState extends State<welcome_screen_lb> {
                                         elevation: 10.sp,
                                         backgroundColor: Colors.deepPurple.shade50,
                                       ),
-                                      onPressed: (){},
+                                      onPressed: (){
+                                        Navigator.push(context, cust_transactinon(child: signup_screen_lb()));
+                                      },
                                       child: Padding(
                                         padding: EdgeInsets.symmetric(
                                           horizontal: 10.w,
